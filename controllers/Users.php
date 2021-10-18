@@ -11,9 +11,7 @@ class CI_Users extends Controller{
 
     function login(){
         $data = $_POST;
-        if(empty($data)){
-            $this->render('users/login');
-        }
+        $this->modelUsers->login($data['email'] ?? '', $data['password'] ?? '');
     }
 
 

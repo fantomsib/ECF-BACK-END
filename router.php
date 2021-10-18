@@ -36,8 +36,8 @@ $obj = new $obj;
 //   );
 //    define(' ', ob_get_contents());
 //ob_end_clean();
-$res = call_user_func([$obj, $method]);
 header("Content-Type: application/json; charset=utf-8");
+$res = call_user_func([$obj, $method]);
 echo json_encode($res, 256);
 
 

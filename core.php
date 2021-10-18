@@ -40,7 +40,7 @@ function get_post($fields){
 
 $_err = [];
 function err($msg){
-    global $_err;
-    $_err[] = $msg;
-    return $msg;
+    header("Content-Type: application/json; charset=utf-8");
+    echo json_encode(['status' => false, 'error' => $msg], 256);
+    exit;
 }
